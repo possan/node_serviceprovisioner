@@ -16,6 +16,7 @@ Typical client workflow
 
 	var commchannel = 'mycomm/' + uuid.v1();
 
+
 2. client tells the provisioner that it expects a specific service running on that channel.
 
 	bus.publish('provisioner', { 
@@ -23,7 +24,8 @@ Typical client workflow
 		service: 'randomnumberservice',
 		channel: commchannel
 	});
-	
+
+
 3. provisioner then tells one of all available proxies to start that service up on that channel.
 
 4. client talks directly to service on selected channel.
@@ -35,6 +37,7 @@ Typical client workflow
 	bus.publish(commchannel, {
 		action: 'something',
 	});
+
 
 Writing services is also simple
 -------------------------------
