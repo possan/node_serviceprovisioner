@@ -1,7 +1,7 @@
 {
     "name" : "serviceprovisioner",
     "version" : "0.1.0",
-    "description" : "Service provisioner",
+    "description" : "Service broker and provisioner",
     "author": "Per-Olov Jernberg <possan@possan.se>",
     "devDependencies": {
         "redis": ">=0.7.0",
@@ -9,6 +9,6 @@
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/possan/node_servicerepository.git"
+        "url": "git://github.com/possan/node_serviceprovisioner.git"
     }
 }

@@ -1,0 +1,19 @@
+node.js service broker and provisioner
+
+simple scalable example setup:
+
+* one provisioning server
+* multiple worker service proxies
+* multiple clients
+* a pubsub messagebus, redis implementation included
+
+typical workflow:
+
+1. client picks a random channel name.
+2. client tells the provisioner that it expects a specific service running on that channel.
+3. provisioner then tells one of all available proxies to start that service up on that channel.
+4. client talks directly to service on selected channel.
+
+
+
+	
