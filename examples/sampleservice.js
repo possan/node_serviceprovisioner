@@ -1,5 +1,5 @@
 //
-// node.js actual sample service
+// Sample service
 //
 
 if( process.argv.length < 3 ) {
@@ -7,20 +7,21 @@ if( process.argv.length < 3 ) {
 	return; 
 }
 
-var busmodule = require('./bus.js');
-
-var bus = new busmodule.bus();
+var config = require('./config.js');
+var servicemodule = require('../lib/lib.js');
+var bus = new servicemodule.RedisBus(config.redis);
 
 var commchannel = process.argv[2];
 
 console.log('## Sample service - communicating on channel '+commchannel);
 
 bus.subscribe(commchannel, function (chan, msg) {
-	if (msg.type == 'exit') {
+	if (msg.type == 'exit' || msg.type == 'stop-service') {
+		console.log('stopping service.');
 		process.exit();
 	}
 	else
-		console.log('unhandled message on provisioner channel ' + chan, msg);
+		console.log('unhandled message', msg);
 });
 
 setInterval( function () { 
