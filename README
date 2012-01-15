@@ -1,10 +1,10 @@
 node.js service broker and provisioner
 
 simple scalable example setup:
-
-* one provisioning server
-* multiple worker service proxies
-* multiple clients
+ 
+* one provisioning server (examples/provisioner
+* multiple worker service proxies (examples/proxy.js)
+* multiple clients (examples/trigger.js)
 * a pubsub messagebus, redis implementation included
 
 typical workflow:
